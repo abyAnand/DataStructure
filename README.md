@@ -1,0 +1,34 @@
+
+# DATA STRUCTURES
+
+This repository contains sample code of Data Structures. This repository is written in java. 
+
+
+
+ 
+
+
+## Manual
+
+This repo is not perfect. It may have bad code. Anyone is welcome to update that. You can add comments for more readability, or change code for better readability, or add new code for data structures. I will update the repo with your code as you give the pull request..
+
+
+## Authors
+
+- [@abyAnand](https://github.com/abyAnand)
+- [@sachinsyam](https://github.com/sachinsyam)
+
+
+
+
+
+## Contributing
+
+Contributions are always welcome!
+
+
+
+
+## 🚀 About Me
+I'm a full stack java developer...
+
