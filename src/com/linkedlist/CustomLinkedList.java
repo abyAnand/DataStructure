@@ -35,6 +35,7 @@ public class CustomLinkedList {
         size += 1;
     }
 
+
     public void insertLast(int val){
         //means list is empty
         if(tail == null){
