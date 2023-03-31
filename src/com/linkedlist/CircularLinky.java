@@ -36,6 +36,19 @@ public class CircularLinky {
 
     }
 
+    void displayWithWhileLoop(){
+        Node temp = head;
+        if (head == null){
+            System.out.println("Empty");
+        }else{
+            while(temp.next != temp){
+                System.out.print(temp.val+"->");
+                temp = temp.next;
+            }
+            System.out.print(temp.val+"->END\n");
+        }
+    }
+
     public void delete(int value){
         Node node = head;
         if(node == null){
