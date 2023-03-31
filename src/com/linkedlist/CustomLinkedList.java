@@ -1,7 +1,7 @@
 package com.linkedlist;
 
 import java.util.HashSet;
-import java.util.Map;
+import java.util.Map ;
 import java.util.Set;
 
 public class CustomLinkedList {
@@ -79,6 +79,7 @@ public class CustomLinkedList {
         while(current != null && current.next != null){
             if(current.next.value == current.value){
                 current.next = current.next.next;
+                size--;
             }
             else{
                 current = current.next;
