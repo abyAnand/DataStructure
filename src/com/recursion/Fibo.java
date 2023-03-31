@@ -11,6 +11,10 @@ public class Fibo {
         int target = 8;
         int answer = binary(arr, target, s, e);
         System.out.println("Answer found at Position: "+ (answer+1));
+
+        System.out.println( fibo(5));
+
+        printFibo(1,1,10);
     }
 
     static int binary(int[] arr, int target, int s, int e){
@@ -34,6 +38,13 @@ public class Fibo {
             return n;
         }
         return fibo(n-1)+fibo(n-2);
+    }
+
+    static void printFibo(int first, int second, int n){
+        if (n > 0) {
+            System.out.print(first + " ");
+            printFibo(second, first + second, n - 1);
+        }
     }
 
 }
