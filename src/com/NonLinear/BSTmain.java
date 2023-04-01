@@ -33,5 +33,8 @@ public class BSTmain {
         bst.preOrderTraversal();
         System.out.println("PostOrder Traversal of this Binary Search Tree: ");
         bst.postOrderTraversal();
+
+        int depth = bst.getDepth(bst.root);
+        System.out.println("Depth of the tree: " + depth);
     }
 }

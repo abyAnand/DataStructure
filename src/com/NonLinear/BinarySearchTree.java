@@ -107,6 +107,50 @@ public class BinarySearchTree {
         }
     }
 
+
+    public int getDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftDepth = getDepth(root.left);
+        int rightDepth = getDepth(root.right);
+        return Math.max(leftDepth, rightDepth) + 1;
+    }
+
+    public int closestValue(TreeNode root, int target) {
+        int closest = root.data;
+        while (root != null) {
+            if (Math.abs(root.data - target) < Math.abs(closest - target)) {
+                closest = root.data;
+            }
+            root = target < root.data ? root.left : root.right;
+        }
+        return closest;
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode prev = null;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (prev != null && root.data <= prev.data) {
+                return false;
+            }
+            prev = root;
+            root = root.right;
+        }
+        return true;
+    }
+
+
+
     public TreeNode delete(TreeNode root, int data) {
         if (root == null) {
             return root;
