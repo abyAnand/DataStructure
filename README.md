@@ -21,6 +21,7 @@ This repo is not perfect. It may have bad code. Anyone is welcome to update that
 
 - [@abyAnand](https://github.com/abyAnand)
 - [@sachinsyam](https://github.com/sachinsyam)
+- [@Abhinandps](https://github.com/Abhinandps) (javascript)
 
 
 
