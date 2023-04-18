@@ -1,7 +1,7 @@
 
 # DATA STRUCTURES
 
-This repository contains sample code of Data Structures. This repository is written in java. 
+This repository contains sample code of Data Structures. 
 
 
 
