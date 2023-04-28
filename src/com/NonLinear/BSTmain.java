@@ -19,6 +19,7 @@ public class BSTmain {
         bst.printLevelOrder();
         System.out.println("Depth:"+bst.getDepth(bst.root));
         System.out.println( bst.closestValue(bst.root,126));
+        bst.printTree();
 
 //        int n, num;
 //

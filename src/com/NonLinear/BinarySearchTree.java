@@ -1,9 +1,7 @@
 package com.NonLinear;
 
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BinarySearchTree {
 
@@ -225,5 +223,90 @@ public class BinarySearchTree {
         postOrder(root);
     }
 
+
+
+
+
+    //pictorial representation of BST
+    public void printTree() {
+        int maxLevel = maxLevel(root);
+        printTreeNodeInternal(Collections.singletonList(root), 1, maxLevel);
+    }
+
+    private void printTreeNodeInternal(List<TreeNode> nodes, int level, int maxLevel) {
+        if (nodes.isEmpty() || isAllElementsNull(nodes))
+            return;
+
+        int floor = maxLevel - level;
+        int edgeLines = (int) Math.pow(2, Math.max(floor - 1, 0));
+        int firstSpaces = (int) Math.pow(2, floor) - 1;
+        int betweenSpaces = (int) Math.pow(2, floor + 1) - 1;
+
+        printWhitespaces(firstSpaces);
+
+        List<TreeNode> newTreeNodes = new ArrayList<>();
+        for (TreeNode node : nodes) {
+            if (node != null) {
+                System.out.print(node.data);
+                newTreeNodes.add(node.left);
+                newTreeNodes.add(node.right);
+            } else {
+                newTreeNodes.add(null);
+                newTreeNodes.add(null);
+                System.out.print(" ");
+            }
+
+            printWhitespaces(betweenSpaces);
+        }
+        System.out.println();
+
+        for (int i = 1; i <= edgeLines; i++) {
+            for (TreeNode node : nodes) {
+                printWhitespaces(firstSpaces - i);
+                if (node == null) {
+                    printWhitespaces(edgeLines + edgeLines + i + 1);
+                    continue;
+                }
+
+                if (node.left != null)
+                    System.out.print("/");
+                else
+                    printWhitespaces(1);
+
+                printWhitespaces(i + i - 1);
+
+                if (node.right != null)
+                    System.out.print("\\");
+                else
+                    printWhitespaces(1);
+
+                printWhitespaces(edgeLines + edgeLines - i);
+            }
+
+            System.out.println();
+        }
+
+        printTreeNodeInternal(newTreeNodes, level + 1, maxLevel);
+    }
+
+    private void printWhitespaces(int count) {
+        for (int i = 0; i < count; i++)
+            System.out.print(" ");
+    }
+    private int maxLevel(TreeNode node) {
+        if (node == null)
+            return 0;
+
+        return Math.max(maxLevel(node.left), maxLevel(node.right)) + 1;
+    }
+
+    private boolean isAllElementsNull(List<TreeNode> list) {
+        for (TreeNode node : list) {
+            if (node != null)
+                return false;
+        }
+
+        return true;
+    }
 
 }
