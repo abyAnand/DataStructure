@@ -63,7 +63,7 @@ public class BinarySearchTree {
         if(root == null){
             return;
         }
-        System.out.println(root.data + " ");
+        System.out.print(root.data + " ");
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -148,8 +148,24 @@ public class BinarySearchTree {
         }
         return true;
     }
+    public boolean isValidBSTRec(TreeNode root) {
+        return isValidBSTHelper(root, null, null);
+    }
+
+    private boolean isValidBSTHelper(TreeNode node, Integer min, Integer max) {
+        if (node == null) {
+            return true;
+        }
+        if ((min != null && node.data <= min) || (max != null && node.data >= max)) {
+            return false;
+        }
+        return isValidBSTHelper(node.left, min, node.data) && isValidBSTHelper(node.right, node.data, max);
+    }
 
 
+    public void delete(int val){
+        delete(root,val );
+    }
 
     public TreeNode delete(TreeNode root, int data) {
         if (root == null) {

@@ -77,7 +77,7 @@ public class Graph {
         System.out.print(current + " ");
 
         for (int neighbor : map.get(current)) {
-            if (!visited.contains(neighbor)) {
+            if (!visited.   contains(neighbor)) {
                 dfsHelper(neighbor, visited);
             }
         }
@@ -91,5 +91,6 @@ public class Graph {
         graph.insert(5,6,false);
         graph.display();
         graph.bfs(3);
+        graph.dfs(3);
     }
 }
